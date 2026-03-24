@@ -13,6 +13,8 @@ AM_Player::AM_Player()
 	SpringArmComp->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
 	
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
+	CameraComp->SetupAttachment(SpringArmComp);
+	CameraComp->bUsePawnControlRotation = false;
 }
 
 
