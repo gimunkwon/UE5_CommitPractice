@@ -1,18 +1,19 @@
 #include "CommitPractice/Public/M_Player.h"
 
-
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 AM_Player::AM_Player()
 {
-	
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
+	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComponent"));
+	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
 }
 
 
 void AM_Player::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 
